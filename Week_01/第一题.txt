@@ -1,0 +1,271 @@
+Classfile /E:/Works/Java/msb/JUC-master/target/classes/com/mm/juc/c_000/T03_Sleep_Yield_Join.class
+  Last modified 2020-10-17; size 3062 bytes
+  MD5 checksum 4b48b5bcd85a0a364add09c07c8c7d22
+  Compiled from "T03_Sleep_Yield_Join.java"
+public class com.mm.juc.c_000.T03_Sleep_Yield_Join
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+    #1 = Methodref          #28.#60       // java/lang/Object."<init>":()V
+    #2 = Methodref          #27.#61       // com/mm/juc/c_000/T03_Sleep_Yield_Join.testJoin:()V
+    #3 = Class              #62           // java/lang/Thread
+    #4 = InvokeDynamic      #0:#67        // #0:run:()Ljava/lang/Runnable;
+    #5 = Methodref          #3.#68        // java/lang/Thread."<init>":(Ljava/lang/Runnable;)V
+    #6 = Methodref          #3.#69        // java/lang/Thread.start:()V
+    #7 = InvokeDynamic      #1:#67        // #1:run:()Ljava/lang/Runnable;
+    #8 = InvokeDynamic      #2:#67        // #2:run:()Ljava/lang/Runnable;
+    #9 = InvokeDynamic      #3:#67        // #3:run:()Ljava/lang/Runnable;
+   #10 = InvokeDynamic      #4:#74        // #4:run:(Ljava/lang/Thread;)Ljava/lang/Runnable;
+   #11 = Methodref          #3.#75        // java/lang/Thread.join:()V
+   #12 = Class              #76           // java/lang/InterruptedException
+   #13 = Methodref          #12.#77       // java/lang/InterruptedException.printStackTrace:()V
+   #14 = Fieldref           #78.#79       // java/lang/System.out:Ljava/io/PrintStream;
+   #15 = Class              #80           // java/lang/StringBuilder
+   #16 = Methodref          #15.#60       // java/lang/StringBuilder."<init>":()V
+   #17 = String             #81           // A
+   #18 = Methodref          #15.#82       // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #19 = Methodref          #15.#83       // java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+   #20 = Methodref          #15.#84       // java/lang/StringBuilder.toString:()Ljava/lang/String;
+   #21 = Methodref          #85.#86       // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #22 = Long               500l
+   #24 = Methodref          #3.#87        // java/lang/Thread.sleep:(J)V
+   #25 = String             #88           // ------------B
+   #26 = Methodref          #3.#89        // java/lang/Thread.yield:()V
+   #27 = Class              #90           // com/mm/juc/c_000/T03_Sleep_Yield_Join
+   #28 = Class              #91           // java/lang/Object
+   #29 = Utf8               <init>
+   #30 = Utf8               ()V
+   #31 = Utf8               Code
+   #32 = Utf8               LineNumberTable
+   #33 = Utf8               LocalVariableTable
+   #34 = Utf8               this
+   #35 = Utf8               Lcom/mm/juc/c_000/T03_Sleep_Yield_Join;
+   #36 = Utf8               main
+   #37 = Utf8               ([Ljava/lang/String;)V
+   #38 = Utf8               args
+   #39 = Utf8               [Ljava/lang/String;
+   #40 = Utf8               testSleep
+   #41 = Utf8               testYield
+   #42 = Utf8               testJoin
+   #43 = Utf8               t1
+   #44 = Utf8               Ljava/lang/Thread;
+   #45 = Utf8               t2
+   #46 = Utf8               lambda$testJoin$4
+   #47 = Utf8               (Ljava/lang/Thread;)V
+   #48 = Utf8               e
+   #49 = Utf8               Ljava/lang/InterruptedException;
+   #50 = Utf8               i
+   #51 = Utf8               I
+   #52 = Utf8               StackMapTable
+   #53 = Class              #76           // java/lang/InterruptedException
+   #54 = Utf8               lambda$testJoin$3
+   #55 = Utf8               lambda$testYield$2
+   #56 = Utf8               lambda$testYield$1
+   #57 = Utf8               lambda$testSleep$0
+   #58 = Utf8               SourceFile
+   #59 = Utf8               T03_Sleep_Yield_Join.java
+   #60 = NameAndType        #29:#30       // "<init>":()V
+   #61 = NameAndType        #42:#30       // testJoin:()V
+   #62 = Utf8               java/lang/Thread
+   #63 = Utf8               BootstrapMethods
+   #64 = MethodHandle       #6:#92        // invokestatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+   #65 = MethodType         #30           //  ()V
+   #66 = MethodHandle       #6:#93        // invokestatic com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testSleep$0:()V
+   #67 = NameAndType        #94:#95       // run:()Ljava/lang/Runnable;
+   #68 = NameAndType        #29:#96       // "<init>":(Ljava/lang/Runnable;)V
+   #69 = NameAndType        #97:#30       // start:()V
+   #70 = MethodHandle       #6:#98        // invokestatic com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testYield$1:()V
+   #71 = MethodHandle       #6:#99        // invokestatic com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testYield$2:()V
+   #72 = MethodHandle       #6:#100       // invokestatic com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testJoin$3:()V
+   #73 = MethodHandle       #6:#101       // invokestatic com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testJoin$4:(Ljava/lang/Thread;)V
+   #74 = NameAndType        #94:#102      // run:(Ljava/lang/Thread;)Ljava/lang/Runnable;
+   #75 = NameAndType        #103:#30      // join:()V
+   #76 = Utf8               java/lang/InterruptedException
+   #77 = NameAndType        #104:#30      // printStackTrace:()V
+   #78 = Class              #105          // java/lang/System
+   #79 = NameAndType        #106:#107     // out:Ljava/io/PrintStream;
+   #80 = Utf8               java/lang/StringBuilder
+   #81 = Utf8               A
+   #82 = NameAndType        #108:#109     // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #83 = NameAndType        #108:#110     // append:(I)Ljava/lang/StringBuilder;
+   #84 = NameAndType        #111:#112     // toString:()Ljava/lang/String;
+   #85 = Class              #113          // java/io/PrintStream
+   #86 = NameAndType        #114:#115     // println:(Ljava/lang/String;)V
+   #87 = NameAndType        #116:#117     // sleep:(J)V
+   #88 = Utf8               ------------B
+   #89 = NameAndType        #118:#30      // yield:()V
+   #90 = Utf8               com/mm/juc/c_000/T03_Sleep_Yield_Join
+   #91 = Utf8               java/lang/Object
+   #92 = Methodref          #119.#120     // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+   #93 = Methodref          #27.#121      // com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testSleep$0:()V
+   #94 = Utf8               run
+   #95 = Utf8               ()Ljava/lang/Runnable;
+   #96 = Utf8               (Ljava/lang/Runnable;)V
+   #97 = Utf8               start
+   #98 = Methodref          #27.#122      // com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testYield$1:()V
+   #99 = Methodref          #27.#123      // com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testYield$2:()V
+  #100 = Methodref          #27.#124      // com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testJoin$3:()V
+  #101 = Methodref          #27.#125      // com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testJoin$4:(Ljava/lang/Thread;)V
+  #102 = Utf8               (Ljava/lang/Thread;)Ljava/lang/Runnable;
+  #103 = Utf8               join
+  #104 = Utf8               printStackTrace
+  #105 = Utf8               java/lang/System
+  #106 = Utf8               out
+  #107 = Utf8               Ljava/io/PrintStream;
+  #108 = Utf8               append
+  #109 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #110 = Utf8               (I)Ljava/lang/StringBuilder;
+  #111 = Utf8               toString
+  #112 = Utf8               ()Ljava/lang/String;
+  #113 = Utf8               java/io/PrintStream
+  #114 = Utf8               println
+  #115 = Utf8               (Ljava/lang/String;)V
+  #116 = Utf8               sleep
+  #117 = Utf8               (J)V
+  #118 = Utf8               yield
+  #119 = Class              #126          // java/lang/invoke/LambdaMetafactory
+  #120 = NameAndType        #127:#131     // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #121 = NameAndType        #57:#30       // lambda$testSleep$0:()V
+  #122 = NameAndType        #56:#30       // lambda$testYield$1:()V
+  #123 = NameAndType        #55:#30       // lambda$testYield$2:()V
+  #124 = NameAndType        #54:#30       // lambda$testJoin$3:()V
+  #125 = NameAndType        #46:#47       // lambda$testJoin$4:(Ljava/lang/Thread;)V
+  #126 = Utf8               java/lang/invoke/LambdaMetafactory
+  #127 = Utf8               metafactory
+  #128 = Class              #133          // java/lang/invoke/MethodHandles$Lookup
+  #129 = Utf8               Lookup
+  #130 = Utf8               InnerClasses
+  #131 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #132 = Class              #134          // java/lang/invoke/MethodHandles
+  #133 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #134 = Utf8               java/lang/invoke/MethodHandles
+{
+  public com.mm.juc.c_000.T03_Sleep_Yield_Join();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 3: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/mm/juc/c_000/T03_Sleep_Yield_Join;
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=0, locals=1, args_size=1
+         0: invokestatic  #2                  // Method testJoin:()V
+         3: return
+      LineNumberTable:
+        line 7: 0
+        line 8: 3
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       4     0  args   [Ljava/lang/String;
+
+  static void testSleep();
+    descriptor: ()V
+    flags: ACC_STATIC
+    Code:
+      stack=3, locals=0, args_size=0
+         0: new           #3                  // class java/lang/Thread
+         3: dup
+         4: invokedynamic #4,  0              // InvokeDynamic #0:run:()Ljava/lang/Runnable;
+         9: invokespecial #5                  // Method java/lang/Thread."<init>":(Ljava/lang/Runnable;)V
+        12: invokevirtual #6                  // Method java/lang/Thread.start:()V
+        15: return
+      LineNumberTable:
+        line 11: 0
+        line 21: 12
+        line 22: 15
+
+  static void testYield();
+    descriptor: ()V
+    flags: ACC_STATIC
+    Code:
+      stack=3, locals=0, args_size=0
+         0: new           #3                  // class java/lang/Thread
+         3: dup
+         4: invokedynamic #7,  0              // InvokeDynamic #1:run:()Ljava/lang/Runnable;
+         9: invokespecial #5                  // Method java/lang/Thread."<init>":(Ljava/lang/Runnable;)V
+        12: invokevirtual #6                  // Method java/lang/Thread.start:()V
+        15: new           #3                  // class java/lang/Thread
+        18: dup
+        19: invokedynamic #8,  0              // InvokeDynamic #2:run:()Ljava/lang/Runnable;
+        24: invokespecial #5                  // Method java/lang/Thread."<init>":(Ljava/lang/Runnable;)V
+        27: invokevirtual #6                  // Method java/lang/Thread.start:()V
+        30: return
+      LineNumberTable:
+        line 25: 0
+        line 32: 12
+        line 34: 15
+        line 39: 27
+        line 40: 30
+
+  static void testJoin();
+    descriptor: ()V
+    flags: ACC_STATIC
+    Code:
+      stack=3, locals=2, args_size=0
+         0: new           #3                  // class java/lang/Thread
+         3: dup
+         4: invokedynamic #9,  0              // InvokeDynamic #3:run:()Ljava/lang/Runnable;
+         9: invokespecial #5                  // Method java/lang/Thread."<init>":(Ljava/lang/Runnable;)V
+        12: astore_0
+        13: new           #3                  // class java/lang/Thread
+        16: dup
+        17: aload_0
+        18: invokedynamic #10,  0             // InvokeDynamic #4:run:(Ljava/lang/Thread;)Ljava/lang/Runnable;
+        23: invokespecial #5                  // Method java/lang/Thread."<init>":(Ljava/lang/Runnable;)V
+        26: astore_1
+        27: aload_0
+        28: invokevirtual #6                  // Method java/lang/Thread.start:()V
+        31: aload_1
+        32: invokevirtual #6                  // Method java/lang/Thread.start:()V
+        35: return
+      LineNumberTable:
+        line 43: 0
+        line 55: 13
+        line 74: 27
+        line 75: 31
+        line 76: 35
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           13      23     0    t1   Ljava/lang/Thread;
+           27       9     1    t2   Ljava/lang/Thread;
+}
+SourceFile: "T03_Sleep_Yield_Join.java"
+InnerClasses:
+     public static final #129= #128 of #132; //Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+BootstrapMethods:
+  0: #64 invokestatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #65 ()V
+      #66 invokestatic com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testSleep$0:()V
+      #65 ()V
+  1: #64 invokestatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #65 ()V
+      #70 invokestatic com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testYield$1:()V
+      #65 ()V
+  2: #64 invokestatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #65 ()V
+      #71 invokestatic com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testYield$2:()V
+      #65 ()V
+  3: #64 invokestatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #65 ()V
+      #72 invokestatic com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testJoin$3:()V
+      #65 ()V
+  4: #64 invokestatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #65 ()V
+      #73 invokestatic com/mm/juc/c_000/T03_Sleep_Yield_Join.lambda$testJoin$4:(Ljava/lang/Thread;)V
+      #65 ()V
