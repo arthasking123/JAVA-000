@@ -1,0 +1,14 @@
+Java HotSpot(TM) 64-Bit Server VM (25.92-b14) for windows-amd64 JRE (1.8.0_92-b14), built on Mar 31 2016 21:03:04 by "java_re" with MS VC++ 10.0 (VS2010)
+Memory: 4k page, physical 16661528k(11875788k free), swap 25760980k(20740108k free)
+CommandLine flags: -XX:InitialHeapSize=4294967296 -XX:MaxHeapSize=4294967296 -XX:MaxNewSize=697933824 -XX:MaxTenuringThreshold=6 -XX:NewSize=697933824 -XX:OldPLABSize=16 -XX:OldSize=1395867648 -XX:+PrintGC -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseConcMarkSweepGC -XX:-UseLargePagesIndividualAllocation -XX:+UseParNewGC 
+2020-10-28T21:47:23.594+0800: 0.663: [GC (Allocation Failure) 2020-10-28T21:47:23.594+0800: 0.663: [ParNew: 545344K->68096K(613440K), 0.0630702 secs] 545344K->145066K(4126208K), 0.0633063 secs] [Times: user=0.16 sys=0.33, real=0.06 secs] 
+2020-10-28T21:47:23.836+0800: 0.905: [GC (Allocation Failure) 2020-10-28T21:47:23.836+0800: 0.905: [ParNew: 613440K->68096K(613440K), 0.0830566 secs] 690410K->272302K(4126208K), 0.0831493 secs] [Times: user=0.17 sys=0.41, real=0.08 secs] 
+2020-10-28T21:47:24.098+0800: 1.168: [GC (Allocation Failure) 2020-10-28T21:47:24.098+0800: 1.168: [ParNew: 613440K->68096K(613440K), 0.0969016 secs] 817646K->399969K(4126208K), 0.0969920 secs] [Times: user=0.61 sys=0.08, real=0.10 secs] 
+Heap
+ par new generation   total 613440K, used 90039K [0x00000006c0000000, 0x00000006e9990000, 0x00000006e9990000)
+  eden space 545344K,   4% used [0x00000006c0000000, 0x00000006c156deb0, 0x00000006e1490000)
+  from space 68096K, 100% used [0x00000006e5710000, 0x00000006e9990000, 0x00000006e9990000)
+  to   space 68096K,   0% used [0x00000006e1490000, 0x00000006e1490000, 0x00000006e5710000)
+ concurrent mark-sweep generation total 3512768K, used 331873K [0x00000006e9990000, 0x00000007c0000000, 0x00000007c0000000)
+ Metaspace       used 2780K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 313K, capacity 386K, committed 512K, reserved 1048576K
