@@ -17,12 +17,7 @@ import java.util.Map;
 import static io.netty.handler.codec.http.HttpResponseStatus.NO_CONTENT;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
-public class OkhttpOutboundHandler implements HttpEndpointRouter,HttpRequestFilter {
-
-    @Override
-    public  void filter(FullHttpRequest fullRequest, ChannelHandlerContext ctx){
-
-    }
+public class OkhttpOutboundHandler implements HttpEndpointRouter {
 
     @Override
     public String route(List<String> endpoints){
@@ -34,17 +29,17 @@ public class OkhttpOutboundHandler implements HttpEndpointRouter,HttpRequestFilt
     }
 
     public void handle(final FullHttpRequest fullRequest, final ChannelHandlerContext ctx) {
-        Map<String,String> map = new HashMap<String,String>();
-        map.put("nio","zhangyang");
+
         Response res = null;
         try {
-            res = connect(getServerUrlBaseOnLVS(), SetHeaders(map));
+            res = connect(getServerUrlBaseOnLVS(), SetHeaders(fullRequest.headers().entries()));
         }
         catch(Exception e){
             e.printStackTrace();
             exceptionCaught(ctx, e);
         }
         finally {
+
             if (fullRequest != null) {
                 if (res == null) {
                     res.newBuilder().body(null).build();
@@ -69,15 +64,16 @@ public class OkhttpOutboundHandler implements HttpEndpointRouter,HttpRequestFilt
     }
 
 
-    public static Headers SetHeaders(Map<String, String> headersParams) {
+    public static Headers SetHeaders(List<Map.Entry<String, String>> headersParams) {
         Headers headers = null;
         okhttp3.Headers.Builder headersbuilder = new okhttp3.Headers.Builder();
         if (headersParams.size() != 0) {
-            Iterator<String> iterator = headersParams.keySet().iterator();
-            String key = "";
+            Iterator<Map.Entry<String,String>> iterator = headersParams.iterator();
+            Map.Entry<String,String> key = null;
             while (iterator.hasNext()) {
                 key = iterator.next();
-                headersbuilder.add(key, headersParams.get(key));
+                System.out.println("set header key:" + key.getKey() + " value:" + key.getValue());
+                headersbuilder.add(key.getKey(), key.getValue());
             }
         }
         headers = headersbuilder.build();
@@ -92,7 +88,13 @@ public class OkhttpOutboundHandler implements HttpEndpointRouter,HttpRequestFilt
         Response response  = null;
         try {
             response = client.newCall(request).execute();
-            System.out.println(response.body());
+            ResponseBody responseBody = response.body();
+            long contentLength = responseBody.contentLength();
+            String bodySize = contentLength != -1 ? contentLength + "-byte" : "unknown-length";
+
+            System.out.println("<-- " + response.code() + ' ' + response.message() + ' '
+                    + response.request().url() + " body size:" +bodySize  + ')');
+            System.out.println("<-- body:" + responseBody.string());
             return response;
         } catch (Exception e) {
             e.printStackTrace();
