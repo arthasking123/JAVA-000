@@ -15,9 +15,9 @@ public class ThreadCountDownLatch {
         Thread thread = new Thread(entity);
         try {
             System.out.println("开始异步计算");
+            start=System.currentTimeMillis();
             thread.start();
             latch.await();
-            start=System.currentTimeMillis();
             int result = entity.getResult();
             System.out.println("异步计算结果为："+result);
         }

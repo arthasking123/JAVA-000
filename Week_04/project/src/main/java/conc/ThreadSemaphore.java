@@ -1,26 +1,27 @@
 package conc;
 
-import Entities.EntityThread;
+import Entities.EntityCountDownLatch;
+import Entities.EntitySemaphore;
+
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 
 /**
- * 本周作业：（必做）思考有多少种方式，在main函数启动一个新线程或线程池，
- * 异步运行一个方法，拿到这个方法的返回值后，退出主线程？
- * 写出你的方法，越多越好，提交到github。
- *
- * 一个简单的代码参考：
+ * Created by zy on 2020/11/10.
  */
-public class ThreadJoin {
-
+public class ThreadSemaphore {
     public static void main(String[] args) {
 
+        Semaphore sem = new Semaphore(1, true);
         long start=0;
-        EntityThread entity = new EntityThread(5);
+        EntitySemaphore entity = new EntitySemaphore(5,sem);
         Thread thread = new Thread(entity);
         try {
             System.out.println("开始异步计算");
             start=System.currentTimeMillis();
             thread.start();
-            thread.join();
+            sem.acquire();
             int result = entity.getResult();
             System.out.println("异步计算结果为："+result);
         }
@@ -29,6 +30,4 @@ public class ThreadJoin {
         }
         System.out.println("使用时间："+ (System.currentTimeMillis()-start) + " ms");
     }
-
-
 }

@@ -1,26 +1,25 @@
 package conc;
 
-import Entities.EntityThread;
+import Entities.EntityLockSupport;
+import Entities.EntitySemaphore;
+
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.LockSupport;
 
 /**
- * 本周作业：（必做）思考有多少种方式，在main函数启动一个新线程或线程池，
- * 异步运行一个方法，拿到这个方法的返回值后，退出主线程？
- * 写出你的方法，越多越好，提交到github。
- *
- * 一个简单的代码参考：
+ * Created by zy on 2020/11/10.
  */
-public class ThreadJoin {
-
+public class ThreadLockSupport {
     public static void main(String[] args) {
 
         long start=0;
-        EntityThread entity = new EntityThread(5);
+        EntityLockSupport entity = new EntityLockSupport(5,Thread.currentThread());
         Thread thread = new Thread(entity);
         try {
             System.out.println("开始异步计算");
             start=System.currentTimeMillis();
             thread.start();
-            thread.join();
+            LockSupport.park();
             int result = entity.getResult();
             System.out.println("异步计算结果为："+result);
         }
@@ -29,6 +28,4 @@ public class ThreadJoin {
         }
         System.out.println("使用时间："+ (System.currentTimeMillis()-start) + " ms");
     }
-
-
 }
