@@ -8,7 +8,7 @@
                         http://www.springframework.org/schema/context
                         http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <!-- 1.使用构造方式装配User实例 -->
+
     <bean id="user1" class="io.zy.bean.User">
         <constructor-arg index ="0" value="1"/>
         <constructor-arg index ="1" value="Tom"/>

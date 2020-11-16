@@ -10,9 +10,9 @@ public class springApp {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("application-zyContext.xml");
 
-        /*构造方式输出结果*/
+        /*1.构造方式输出结果*/
         System.out.println(context.getBean("user1"));
-		/*设置方式输出结果*/
+		/*2.设置方式输出结果*/
         System.out.println(context.getBean("user2"));
     }
 }

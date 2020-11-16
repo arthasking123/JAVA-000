@@ -27,6 +27,22 @@ public class User {
         this.addressList = addressList;
     }
 
+    public void setAddressList(List<String> addressList){
+        this.addressList = addressList;
+    }
+
+    public void setMobile(String mobile){
+        this.mobile = mobile;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
     @Override
     public String toString(){
         return "id:"+ String.format("%d",this.id) + " name:" + this.name + " mobile:" + this.mobile + " addressList:" + this.addressList ;
