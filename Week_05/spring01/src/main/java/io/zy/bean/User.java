@@ -43,6 +43,10 @@ public class User {
         this.id = id;
     }
 
+    public void defaultPrint(){
+        System.out.println("default print from user");
+    }
+
     @Override
     public String toString(){
         return "id:"+ String.format("%d",this.id) + " name:" + this.name + " mobile:" + this.mobile + " addressList:" + this.addressList ;
