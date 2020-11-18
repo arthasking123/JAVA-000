@@ -9,19 +9,14 @@ import org.springframework.jms.annotation.EnableJms;
 public class JDBCApplication {
 
 	public static void main(String[] args) {
-         //1.JDBC增删改查
-		MysqlConnector.getInstance().insertTest();
-		MysqlConnector.getInstance().selectTest();
-		MysqlConnector.getInstance().updateTest();
-		MysqlConnector.getInstance().selectTest();
-        MysqlConnector.getInstance().deleteTest();
-
-
-		//3.Hikari连接池
-
-
-
-
+         //JDBC增删改查
+		MysqlConnector instance = MysqlConnector.getInstance();
+		instance.insertTest();
+		instance.selectTest();
+		instance.updateTest();
+		instance.selectTest();
+        instance.deleteTest();
+		MysqlConnector.stopConnection();
 	}
 
 }

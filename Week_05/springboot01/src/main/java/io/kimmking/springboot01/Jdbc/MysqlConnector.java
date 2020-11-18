@@ -4,22 +4,29 @@ package io.kimmking.springboot01.Jdbc;
 
 
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
 import java.sql.*;
 
 /**
  * Created by zy on 2020/11/18.
  */
 public class MysqlConnector {
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://118.190.65.33:3306/jingtongcloud";
+    static final String JDBC_DRIVER = "com.mysql.jdbc.jdbc2.optional.MysqlDataSource";
+    static final String SERVER_NAME = "118.190.65.33";
+    static final String PORT = "3306";
+    static final String DB = "jingtongcloud";
     static final String USER = "root";
     static final String PASS = "Jby&*2016";
+    static final int DB_MAX_CONN = 1;
     static Connection conn = null;
     static Statement stmt = null;
     static private PreparedStatement pstmt;
-    private long executionStart;
-    private long executionEnd;
+    long executionStart;
+    long executionEnd;
     static public MysqlConnector loadDriver = null;
+    static HikariDataSource dataSource = null;
     public static MysqlConnector getInstance(){
         //DCL
         if(loadDriver == null){
@@ -27,6 +34,16 @@ public class MysqlConnector {
                 try {
                     // 注册 JDBC 驱动
                     Class.forName(JDBC_DRIVER);
+                    HikariConfig config = new HikariConfig();
+                    config.setMaximumPoolSize(DB_MAX_CONN);
+                    config.setDataSourceClassName(JDBC_DRIVER);
+                    config.addDataSourceProperty("serverName", SERVER_NAME);
+                    config.addDataSourceProperty("port", PORT);
+                    config.addDataSourceProperty("databaseName", DB);
+                    config.addDataSourceProperty("user", USER);
+                    config.addDataSourceProperty("password", PASS);
+                    dataSource = new HikariDataSource(config);
+
                     if (loadDriver == null) {
                         loadDriver = new MysqlConnector();
                     }
@@ -39,12 +56,16 @@ public class MysqlConnector {
         return loadDriver;
     }
 
+    public static void stopConnection() {
+      dataSource.close();
+    }
+
     void before(){
         try {
             // 打开链接
             executionStart = System.currentTimeMillis();
             System.out.println("连接数据库...");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = dataSource.getConnection();
             conn.setAutoCommit(false);
             if (pstmt != null) {
                 pstmt.clearParameters();
@@ -52,7 +73,7 @@ public class MysqlConnector {
             }
 
         }
-        catch(Exception e){
+        catch(SQLException e){
             e.printStackTrace();
         }
     }
