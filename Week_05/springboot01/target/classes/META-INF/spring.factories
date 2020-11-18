@@ -1,0 +1,3 @@
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+#  com.peterwanghao.samples.springboot.autoconfiguration.MySQLAutoconfiguration
+

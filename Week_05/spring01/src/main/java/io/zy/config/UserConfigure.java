@@ -11,10 +11,6 @@ import java.util.List;
  */
 @Configuration
 public class UserConfigure {
-    private int id;
-    private String name;
-    private String mobile;
-    private List<String> addressList;
 
     @Bean
     public User user(){
