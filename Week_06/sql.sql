@@ -67,8 +67,8 @@ create table tb_good_detail_snapshot(
 /*注：订单表索引后期根据业务查询特征建立*/
 create table tb_order(
   `id` bigint unsigned not null auto_increment comment 'id',
-  `order_sn` varchar(32) not null comment '订单编号',
-  `trade_no` varchar(64) default null comment '第三方支付订单号',
+  `order_sn` char(32) not null comment '订单编号',
+  `trade_no` char(64) default null comment '第三方支付订单号',
   `pay_type` tinybigint(3) unsigned not null default 2 comment '支付类型 1支付宝 2微信',
   `user_id` bigint unsigned not null comment '用户id',
   `user_snapshot_id` bigint unsigned not null comment '用户快照id',
