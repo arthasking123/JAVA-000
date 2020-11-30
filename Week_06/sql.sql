@@ -75,7 +75,7 @@ create table tb_order(
   `good_id` bigint unsigned not null comment '商品id',
   `good_snapshot_id` bigint unsigned not null comment '商品快照id',  
   `pay_fee`  int unsigned not null default 0 comment '实际应支付金额（分）',  
-  `status` tinybigint unsigned not null default 0 comment '订单状态 0--待付款 1--待发货 2--待收货 3--已完成 4--已取消',
+  `status` tinyint unsigned not null default 0 comment '订单状态 0--待付款 1--待发货 2--待收货 3--已完成 4--已取消',
   `create_at` datetime not null default current_timestamp comment '创建时间',
   `update_at` datetime not null default current_timestamp comment '更新时间',  
   primary key (`id`)
