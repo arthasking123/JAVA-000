@@ -49,7 +49,7 @@ create table tb_good_snapshot(
 /*考虑商品描述字段可能较长，另外再商品列表页往往不需要富文本详情数据，故垂直拆分该字段*/
 create table tb_good_detail(
   `id` bigint unsigned not null auto_increment comment 'id',
-  `good_id` bigint unsigned not null comment '商品id',
+  `good_id` bigint unsigned not null default 0 comment '商品id',
   `content` text not null  comment '商品详情/商品富文本描述',  
   primary key (`id`)
 )comment '商品详情表';
@@ -57,7 +57,7 @@ create table tb_good_detail(
 
 create table tb_good_detail_snapshot(
   `id` bigint unsigned not null auto_increment comment 'id',
-  `good_snapshot_id` bigint unsigned not null comment '商品快照表id',
+  `good_snapshot_id` bigint unsigned not null default 0 comment '商品快照表id',
   `content` varchar(45) not null default '' comment '商品详情/商品富文本描述',
   primary key (`id`),
   key `good_snapshot_id` (`good_snapshot_id`)
@@ -67,13 +67,13 @@ create table tb_good_detail_snapshot(
 /*注：订单表索引后期根据业务查询特征建立*/
 create table tb_order(
   `id` bigint unsigned not null auto_increment comment 'id',
-  `order_sn` char(32) not null comment '订单编号',
-  `trade_no` char(64) default null comment '第三方支付订单号',
+  `order_sn` char(32) not null default '' comment '订单编号',
+  `trade_no` char(64) not null default '' comment '第三方支付订单号',
   `pay_type` tinyint(3) unsigned not null default 2 comment '支付类型 1支付宝 2微信',
-  `user_id` bigint unsigned not null comment '用户id',
-  `user_snapshot_id` bigint unsigned not null comment '用户快照id',
-  `good_id` bigint unsigned not null comment '商品id',
-  `good_snapshot_id` bigint unsigned not null comment '商品快照id',  
+  `user_id` bigint unsigned not null default 0 comment '用户id',
+  `user_snapshot_id` bigint unsigned not null default 0 comment '用户快照id',
+  `good_id` bigint unsigned not null default 0 comment '商品id',
+  `good_snapshot_id` bigint unsigned not null default 0 comment '商品快照id',  
   `pay_fee`  int unsigned not null default 0 comment '实际应支付金额（分）',  
   `status` tinyint unsigned not null default 0 comment '订单状态 0--待付款 1--待发货 2--待收货 3--已完成 4--已取消',
   `create_at` datetime not null default current_timestamp comment '创建时间',
