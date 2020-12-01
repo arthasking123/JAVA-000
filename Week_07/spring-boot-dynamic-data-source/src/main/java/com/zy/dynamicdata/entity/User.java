@@ -22,6 +22,10 @@ public class User {
 
     }
 
+    public User(){
+
+    }
+
     public Integer getUid() {
         return id;
     }
