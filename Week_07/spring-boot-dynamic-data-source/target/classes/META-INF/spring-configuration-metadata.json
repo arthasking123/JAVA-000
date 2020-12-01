@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource.master",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.zy.dynamicdata.config.DynamicDataSourceConfig",
+      "sourceMethod": "masterDataSource()"
+    },
+    {
+      "name": "spring.datasource.slave1",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.zy.dynamicdata.config.DynamicDataSourceConfig",
+      "sourceMethod": "slave1DataSource()"
+    },
+    {
+      "name": "spring.datasource.slave2",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.zy.dynamicdata.config.DynamicDataSourceConfig",
+      "sourceMethod": "slave2DataSource()"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
