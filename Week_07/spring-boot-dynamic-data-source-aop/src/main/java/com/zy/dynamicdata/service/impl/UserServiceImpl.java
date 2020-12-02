@@ -1,7 +1,7 @@
 package com.zy.dynamicdata.service.impl;
 
-import com.zy.dynamicdata.config.ReadOnlyConnection;
 import com.zy.dynamicdata.dao.UserDao;
+import com.zy.dynamicdata.enums.DBTypeEnum;
 import com.zy.dynamicdata.service.UserService;
 import com.zy.dynamicdata.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
-    @ReadOnlyConnection
     @Override
     public User getUser(Integer id) {
         return userDao.getUserById(id);
