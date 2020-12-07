@@ -24,13 +24,13 @@
 
 dataSources:
   ds_0: !!com.zaxxer.hikari.HikariDataSource
-    jdbcUrl: jdbc:mysql://118.190.65.33:3306/crmeb?serverTimezone=UTC&useSSL=false
+    jdbcUrl: jdbc:mysql://127.0.0.1:3306/db0?serverTimezone=UTC&useSSL=false
     username: root
-    password: Jby&*2016
+    password:
   ds_1: !!com.zaxxer.hikari.HikariDataSource
-    jdbcUrl: jdbc:mysql://118.190.65.33:3306/crmeb1?serverTimezone=UTC&useSSL=false
+    jdbcUrl: jdbc:mysql://127.0.0.1:3306/db1?serverTimezone=UTC&useSSL=false
     username: root
-    password: Jby&*2016
+    password:
 
 rules:
 - !SHARDING
