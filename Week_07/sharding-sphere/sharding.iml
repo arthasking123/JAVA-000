@@ -60,10 +60,29 @@
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.46" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:2.5.1" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-jdbc-core:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-jdbc-core-spring-boot-starter:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-sharding-spring-boot-starter:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-sharding-common:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-infra-binder:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-infra-parser:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-infra-common:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-sharding-api:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy:indy:2.4.19" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-shadow-spring-boot-starter:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-shadow-common:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-shadow-api:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-encrypt-spring-boot-starter:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-encrypt-common:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-encrypt-api:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-replica-query-spring-boot-starter:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-replica-query-common:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-replica-query-api:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-jdbc-spring-boot-starter-infra:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-jdbc-transaction-spring:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-transaction-core:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-infra-executor:5.0.0-alpha" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-infra-common:5.0.0-alpha" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-jdbc-core:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-sql-parser-sql92:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-sql-parser-engine:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-sql-parser-spi:5.0.0-alpha" level="project" />
@@ -75,29 +94,17 @@
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-sql-parser-oracle:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-sql-parser-sqlserver:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-infra-context:5.0.0-alpha" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-infra-binder:5.0.0-alpha" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-infra-parser:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-distsql-parser-engine:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-distsql-parser-statement:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-sharding-route:5.0.0-alpha" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-sharding-common:5.0.0-alpha" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-sharding-api:5.0.0-alpha" level="project" />
-    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy:indy:2.4.19" level="project" />
-    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-infra-route:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-system-datetime:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-infra-datetime-spi:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-replica-query-route:5.0.0-alpha" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-replica-query-common:5.0.0-alpha" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-replica-query-api:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-sharding-rewrite:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-infra-rewrite-engine:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-encrypt-rewrite:5.0.0-alpha" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-encrypt-common:5.0.0-alpha" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-encrypt-api:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-shadow-rewrite:5.0.0-alpha" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-shadow-common:5.0.0-alpha" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-shadow-api:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-shadow-route:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-sharding-merge:5.0.0-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shardingsphere:shardingsphere-infra-merge:5.0.0-alpha" level="project" />
