@@ -8,4 +8,5 @@ import com.zy.sharding.entity.User;
 public interface UserService {
     User getUser(Integer id);
     long setUserName(User user);
+    long plusAge(Integer id);
 }

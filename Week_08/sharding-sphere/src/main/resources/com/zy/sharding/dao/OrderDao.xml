@@ -27,6 +27,6 @@
     </select>
 
     <update id="setOrderStatus" flushCache="true" statementType="PREPARED" parameterType="com.zy.sharding.entity.Order" >
-        update tb_order set status = #{status},update_at = now() WHERE id = #{id};
+        update tb_order set status = #{status},update_at = now() WHERE user_id = #{userId} AND order_sn = #{id};
     </update>
 </mapper>

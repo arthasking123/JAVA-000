@@ -1,5 +1,6 @@
 package com.zy.sharding.service.impl;
 
+import com.google.errorprone.annotations.OverridingMethodsMustInvokeSuper;
 import com.zy.sharding.dao.UserDao;
 import com.zy.sharding.entity.User;
 import com.zy.sharding.service.UserService;
@@ -25,5 +26,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public long setUserName(User user){
         return userDao.setUserName(user);
+    }
+
+    @Override
+    public long plusAge(Integer id){
+        return userDao.plusAge(id);
     }
 }

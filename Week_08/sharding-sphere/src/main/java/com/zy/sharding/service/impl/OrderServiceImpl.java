@@ -6,6 +6,7 @@ import com.zy.sharding.entity.Order;
 import com.zy.sharding.entity.User;
 import com.zy.sharding.service.OrderService;
 import com.zy.sharding.service.UserService;
+import org.dromara.hmily.annotation.HmilyTCC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,10 +43,13 @@ public class OrderServiceImpl implements OrderService {
 
     @Transactional
     @Override
-    public long setOrderStatus(Integer id, Integer status){
+    public long setOrderStatus(Integer userId, long orderSN, Integer status){
         Order order = new Order();
-        order.setId(id);
+        order.setUserId(userId);
+        order.setOrderSN(orderSN);
         order.setStatus(status);
         return orderDao.setOrderStatus(order);
     }
+
+
 }

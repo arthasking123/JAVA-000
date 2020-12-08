@@ -1,8 +1,6 @@
 package com.zy.sharding.dao;
 
 import com.zy.sharding.entity.Order;
-import com.zy.sharding.entity.User;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

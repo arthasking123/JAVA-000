@@ -13,5 +13,5 @@ public interface OrderService {
     List<Order> getOrdersByUserId(Map<String, Object> map);
     long insertOrder(Map<String, Object> map);
     long deleteOrder(Map<String, Object> map);
-    long setOrderStatus(Integer id, Integer status);
+    long setOrderStatus(Integer userId, long orderSN, Integer status);
 }

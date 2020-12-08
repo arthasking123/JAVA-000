@@ -79,12 +79,11 @@ public class OrderController {
 
 	/**
 	 * 更新订单状态
-	 * @param id id
-	 * @param status status
 	 * @return long
 	 */
-	@RequestMapping(value = "/setOrderStatus/{id}/{status}", method = RequestMethod.GET)
-	public long setOrderStatus(@PathVariable Integer id, @PathVariable Integer status) {
-		return orderService.setOrderStatus(id, status);
+	@RequestMapping(value = "/setOrderStatus/{userId}/{id}/{status}", method = RequestMethod.GET)
+	public long setOrderStatus(@PathVariable Integer userId, @PathVariable Integer id, @PathVariable Integer status) {
+		return orderService.setOrderStatus(userId, id, status);
 	}
+
 }

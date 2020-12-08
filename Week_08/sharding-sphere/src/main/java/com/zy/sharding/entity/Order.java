@@ -9,7 +9,7 @@ import lombok.Data;
 public class Order {
 	private int id;
 	private int status;
-	private String orderSN;
+	private long orderSN;
 	private String tradeNo;
 	private int userId;
 	private int goodId;
