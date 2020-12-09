@@ -10,8 +10,12 @@
 
 - sharding-sphere  
 
-  本工程完成了以下两项任务：
+  基于SS实现分库分表下的CRUD操作
+
+- hmily-demo-tcc  hmily-demo-dubbo-order  hmily-demo-dubbo-account
   
-  1.基于SS实现分库分表下的CRUD操作
+  基于HMILY TCC进行了分布式事务测试，其中tcc为consumer, order与account为provider
   
-  2.基于HMILY TCC进行了分布式事务测试（仅进行了本地TCC事务测试，未通过DUBBO进行RPC调用）
+- distributeTransaction
+  
+  简易TCC框架（未完成）

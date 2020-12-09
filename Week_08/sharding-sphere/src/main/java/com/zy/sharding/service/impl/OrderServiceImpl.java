@@ -6,7 +6,6 @@ import com.zy.sharding.entity.Order;
 import com.zy.sharding.entity.User;
 import com.zy.sharding.service.OrderService;
 import com.zy.sharding.service.UserService;
-import org.dromara.hmily.annotation.HmilyTCC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

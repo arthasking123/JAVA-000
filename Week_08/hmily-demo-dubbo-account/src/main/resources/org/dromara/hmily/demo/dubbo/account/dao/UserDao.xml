@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.dromara.hmily.demo.dubbo.account.dao.UserDao">
+    <select id="getUserById" parameterType="int" resultType="org.dromara.hmily.demo.dubbo.account.entity.User">
+        select id,name from tb_user where id = #{id} LIMIT 1
+    </select>
+    <update id="setUserName" flushCache="true" statementType="PREPARED" parameterType="org.dromara.hmily.demo.dubbo.account.entity.User" >
+        update tb_user set name = #{name} WHERE id = #{id}
+    </update>
+
+    <update id="plusAge">
+        update tb_user set age = age + 1 WHERE id = #{id}
+    </update>
+
+    <update id="minusAge">
+        update tb_user set age = age - 1 WHERE id = #{id}
+    </update>
+</mapper>

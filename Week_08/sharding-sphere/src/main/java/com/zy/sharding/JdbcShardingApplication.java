@@ -20,7 +20,7 @@ import org.mybatis.spring.annotation.MapperScan;
  * 入口
  */
 @MapperScan(basePackages = "com.zy.sharding.dao")
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class,MongoAutoConfiguration.class, MongoDataAutoConfiguration.class})
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class JdbcShardingApplication {
 
 	public static void main(String[] args) {

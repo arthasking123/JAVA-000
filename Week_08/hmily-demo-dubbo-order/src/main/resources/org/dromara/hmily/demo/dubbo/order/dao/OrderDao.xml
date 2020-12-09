@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.dromara.hmily.demo.dubbo.order.dao.OrderDao">
+    <resultMap id="baseResultMap" type="org.dromara.hmily.demo.dubbo.order.entity.Order">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="order_sn" property="orderSN" jdbcType="VARCHAR"/>
+        <result column="trade_no" property="tradeNo" jdbcType="VARCHAR"/>
+        <result column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="good_id" property="goodId" jdbcType="INTEGER"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="pay_type" property="payType" jdbcType="INTEGER"/>
+        <result column="pay_fee" property="payFee" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <insert id="insertOrder"  useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_order (order_sn, trade_no, pay_type, user_id, user_snapshot_id, good_id, good_snapshot_id, pay_fee) VALUES (#{orderSN,jdbcType=BIGINT}, #{tradeNo,jdbcType=VARCHAR}, #{payType,jdbcType=INTEGER}, #{userId,jdbcType=BIGINT}, #{userSnapshotId,jdbcType=BIGINT}, #{goodId,jdbcType=BIGINT}, #{goodSnapshotId,jdbcType=BIGINT}, #{payFee,jdbcType=INTEGER});
+    </insert>
+
+    <delete id="deleteOrder">
+         DELETE FROM tb_order WHERE user_id = #{userId,jdbcType=INTEGER} AND order_sn = #{orderSN,jdbcType=BIGINT};
+    </delete>
+
+    <select id="getOrdersByUserId"  resultMap="baseResultMap">
+        select id,order_sn,trade_no,pay_type,good_id,pay_fee,status,user_id from tb_order where user_id = #{userId} LIMIT #{offset},#{limit};
+    </select>
+
+    <update id="setOrderStatus" flushCache="true" statementType="PREPARED" parameterType="org.dromara.hmily.demo.dubbo.order.entity.Order" >
+        update tb_order set status = #{status},update_at = now() WHERE user_id = #{userId} AND order_sn = #{id};
+    </update>
+</mapper>
