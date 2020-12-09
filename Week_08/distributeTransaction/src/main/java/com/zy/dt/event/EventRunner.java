@@ -91,8 +91,10 @@ public class EventRunner {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            finally {
+                clear();
+            }
         }
-        clear();
         return null;
     }
 
@@ -107,8 +109,10 @@ public class EventRunner {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            finally {
+                clear();
+            }
         }
-        clear();
         return null;
     }
 
