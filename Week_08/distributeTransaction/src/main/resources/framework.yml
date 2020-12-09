@@ -1,2 +1,2 @@
 defaults:
-  local-transaction-timeout: 60000
+  local-transaction-timeout: 2000

@@ -18,4 +18,11 @@
   
 - distributeTransaction
   
-  简易TCC框架（未完成）
+  简易TCC框架
+
+  特性：
+  
+  1.TRY阶段超时、抛异常、返回值为false均可触发CANCEL
+  
+  2.可并行执行分布式事务（待完成）
+  
