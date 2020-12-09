@@ -1,8 +1,6 @@
 package com.zy.dt.event;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
-import java.util.List;
+import lombok.Data;
 import java.util.concurrent.Callable;
 
 @Data
