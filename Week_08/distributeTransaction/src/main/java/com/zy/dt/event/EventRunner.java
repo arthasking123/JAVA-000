@@ -85,7 +85,7 @@ public class EventRunner {
             try {
                 for(int currentRunIndex = 0; currentRunIndex < eventList.size(); currentRunIndex++) {
                     BaseEvent event = eventList.get(currentRunIndex);
-                    Object subResult = exec.submit(event.confirmEvent).get(event.timeOut,TimeUnit.MILLISECONDS);
+                    exec.submit(event.confirmEvent).get(event.timeOut,TimeUnit.MILLISECONDS);
                 }
                 return mainEvent.confirmEvent.call();
             } catch (Exception e) {
@@ -103,7 +103,7 @@ public class EventRunner {
             try {
                 for(int currentRunIndex = 0; currentRunIndex < runIndex; currentRunIndex++) {
                     BaseEvent event = eventList.get(currentRunIndex);
-                    Object subResult = exec.submit(event.cancelEvent).get(event.timeOut,TimeUnit.MILLISECONDS);
+                    exec.submit(event.cancelEvent).get(event.timeOut,TimeUnit.MILLISECONDS);
                 }
                 return mainEvent.cancelEvent.call();
             } catch (Exception e) {
