@@ -1,0 +1,30 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /
+  address: 0.0.0.0
+spring:
+    datasource:
+      db0:
+        driver-class-name:  com.mysql.jdbc.Driver
+        jdbcUrl: jdbc:mysql://127.0.0.1:3306/db0?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+        username: root
+        password:
+      db1:
+        driver-class-name:  com.mysql.jdbc.Driver
+        jdbcUrl: jdbc:mysql://127.0.0.1:3306/db1?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+        username: root
+        password:
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+
+logging:
+    level:
+        root: error
+        org.springframework.web: info
+        org.apache.ibatis: debug
+        org.dromara.hmily.demo.bonuspoint: debug
+        org.dromara.hmily.demo.lottery: debug
+        org.dromara.hmily.demo: debug
+    path: "./logs"
+

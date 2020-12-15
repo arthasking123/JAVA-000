@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/hmily-demo-dubbo-account.iml" filepath="$PROJECT_DIR$/hmily-demo-dubbo-account.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hmily-demo-dubbo-order.iml" filepath="$PROJECT_DIR$/hmily-demo-dubbo-order.iml" />
+    </modules>
+  </component>
+</project>
