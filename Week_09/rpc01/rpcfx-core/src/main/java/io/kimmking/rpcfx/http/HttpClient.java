@@ -63,7 +63,7 @@ public class HttpClient {
             this.port = uri.getPort();
 
             ChannelFuture channelFuture = b.connect(host, port);
-//注册连接事件
+            //注册连接事件
             channelFuture.addListener((ChannelFutureListener)future -> {
                 //如果连接成功
                 if (future.isSuccess()) {
@@ -83,26 +83,6 @@ public class HttpClient {
                 close();
                 logger.info("客户端[" + channelFuture.channel().localAddress().toString() + "]已断开...");
             });
-//            //注册连接事件
-//            channelFuture.addListener((ChannelFutureListener)future -> {
-//                //如果连接成功
-//                if (future.isSuccess()) {
-//                    logger.info("客户端[" + channelFuture.channel().localAddress().toString() + "]已连接...");
-//                    clientChannel = channelFuture.channel();
-//                }
-//                //如果连接失败，尝试重新连接
-//                else{
-//                    logger.info("客户端[" + channelFuture.channel().localAddress().toString() + "]连接失败，重新连接中...");
-//                    future.channel().close();
-//                    b.connect(uri.getHost(), uri.getPort());
-//                }
-//            });
-//
-//            //注册关闭事件
-//            channelFuture.channel().closeFuture().addListener(cfl -> {
-//                close();
-//                logger.info("客户端[" + channelFuture.channel().localAddress().toString() + "]已断开...");
-//            });
 
         }
         catch(URISyntaxException e){
