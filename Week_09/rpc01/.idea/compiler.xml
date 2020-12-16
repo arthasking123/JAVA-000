@@ -45,9 +45,18 @@
         <processorPath useClasspath="true" />
         <module name="rpcfx-demo-api" />
       </profile>
+      <profile default="false" name="Annotation profile for rpcfx-consumer-jmeter (1)" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="rpcfx-consumer-jmeter (1)" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="rpcfx" target="1.8" />
+      <module name="rpcfx-consumer-jmeter" target="1.8" />
+      <module name="rpcfx-consumer-jmeter (1)" target="8" />
       <module name="rpcfx-core" target="1.8" />
       <module name="rpcfx-demo-api" target="1.8" />
       <module name="rpcfx-demo-consumer" target="8" />

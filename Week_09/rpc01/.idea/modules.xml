@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/rpcfx.iml" filepath="$PROJECT_DIR$/rpcfx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpcfx-consumer-jmeter/rpcfx-consumer-jmeter (1).iml" filepath="$PROJECT_DIR$/rpcfx-consumer-jmeter/rpcfx-consumer-jmeter (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/rpcfx-core/rpcfx-core.iml" filepath="$PROJECT_DIR$/rpcfx-core/rpcfx-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/rpcfx-demo-api/rpcfx-demo-api.iml" filepath="$PROJECT_DIR$/rpcfx-demo-api/rpcfx-demo-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/rpcfx-demo-consumer/rpcfx-demo-consumer.iml" filepath="$PROJECT_DIR$/rpcfx-demo-consumer/rpcfx-demo-consumer.iml" />

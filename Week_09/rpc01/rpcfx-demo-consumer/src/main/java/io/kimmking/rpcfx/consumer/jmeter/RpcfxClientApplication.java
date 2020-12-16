@@ -1,4 +1,4 @@
-package io.kimmking.rpcfx.demo.consumer;
+package io.kimmking.rpcfx.consumer.jmeter;
 
 import io.kimmking.rpcfx.client.Rpcfx;
 import io.kimmking.rpcfx.demo.api.Order;

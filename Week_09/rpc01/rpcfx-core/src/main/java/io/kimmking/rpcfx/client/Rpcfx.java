@@ -9,6 +9,7 @@ import io.kimmking.rpcfx.api.RpcfxResponse;
 import io.kimmking.rpcfx.http.HttpClient;
 import io.netty.buffer.Unpooled;
 import io.netty.handler.codec.http.*;
+import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.util.CharsetUtil;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
@@ -50,8 +51,7 @@ public final class Rpcfx {
         }
 
         // 可以尝试，自己去写对象序列化，二进制还是文本的，，，rpcfx是xml自定义序列化、反序列化，json: code.google.com/p/rpcfx
-        // int byte char float double long bool
-        // [], data class
+
         @Override
         public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable{
 
@@ -61,8 +61,12 @@ public final class Rpcfx {
             request.setParams(args);
 
             RpcfxResponse response = post(request, url);
+            if(!response.isStatus()){
+                // 这里判断response.status，处理异常
+                //failed
+                return new Object();
+            }
 
-            // 这里判断response.status，处理异常
             // 考虑封装一个全局的RpcfxException
 
             return JSON.parse(response.getResult().toString());
@@ -71,6 +75,7 @@ public final class Rpcfx {
         private RpcfxResponse post(RpcfxRequest req, String url) throws InterruptedException {
             String reqJson = JSON.toJSONString(req);
             System.out.println("req json: "+reqJson);
+            //NETTY+HTTP请求方式
             HttpClient client = new HttpClient(url);
             String respJson = client.send(reqJson);
             System.out.println("resp json: "+respJson);
