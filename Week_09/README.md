@@ -23,7 +23,7 @@
 
   完成：
   
-  1.服务端集成hp-reflect(https://gitee.com/kkk001/hp-reflect)实现字节码代替服务端反射
+  1.服务端集成hp-reflect(https://gitee.com/kkk001/hp-reflect)实现字节码代替服务端反射(使用标准反射请求时间平均耗时640ms,改用字节码方案后首次加载类平均耗时1000ms,后续平均耗时600ms)
   2.客户端动态代理改用MethodInterceptor实现AOP
   3.客户端改用NETTY+HTTP作为传输方式
 
